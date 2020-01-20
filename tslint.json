@@ -14,6 +14,17 @@
     "no-consecutive-blank-lines": false,
     "object-literal-sort-keys": false,
     "ordered-imports": false,
-    "quotemark": [true, "single"]
+    "quotemark": [true, "single"],
+    "triple-equals": [
+      false
+    ],
+    "prefer-const": [
+      false
+    ],
+    "comment-format": [
+      false,
+      "check-space"
+    ],
+    "no-console": false
   }
 }

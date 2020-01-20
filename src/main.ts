@@ -2,8 +2,18 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
-
+import Vant from 'vant';
+import 'vant/lib/index.css';
+import './common/base.css';
+Vue.use(Vant);
 Vue.config.productionTip = false;
+
+import Vconsole from 'vconsole';
+
+if (window.location.href.indexOf('localhost') == -1) {
+  let vConsole: any = new Vconsole();
+  Vue.use(vConsole);
+}
 
 new Vue({
   router,
