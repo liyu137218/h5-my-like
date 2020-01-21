@@ -1,6 +1,6 @@
 <template>
     <div class="home-container">
-        <van-nav-bar title="标题" >
+        <van-nav-bar :title="headerModule.headerText" >
             <van-icon name="arrow-left" slot="left" />
         </van-nav-bar>
         <div class="home-body">
@@ -13,7 +13,7 @@
 <script lang="ts">
 import {Vue, Component} from 'vue-property-decorator'
 import FooterComponent from '@/components/commom/footer/index.vue';
-import { Mutation } from 'vuex-class';
+import { State,Mutation } from 'vuex-class';
 
 @Component({
     components:{
@@ -21,6 +21,7 @@ import { Mutation } from 'vuex-class';
     }
 })
 export default class HomeComponent extends Vue {
+    @State('headerModule') headerModule:any
     @Mutation('set_headerText') set_headerText:any;
 
     created() {

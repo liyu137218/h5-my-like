@@ -19,7 +19,8 @@
             <p class="forget-pwd" @click="toReset()">忘记密码？</p>
             <van-button  type="info" 
                 :disabled="userPwd && userNum ? false : true" 
-                size="large"> 登 录</van-button>
+                size="large"
+                @click="login"> 登 录</van-button>
         </section>
     </div>
 </template>
@@ -44,6 +45,11 @@ export default class loginComponent extends Vue {
     }
     toReset(){
 
+    }
+    login(){
+        if (this.userNum && this.userPwd) {
+            this.$router.push('/home/main')
+        }
     }
 }
 </script>

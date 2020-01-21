@@ -1,9 +1,9 @@
 <template>
     <van-tabbar v-model="footerModule.activeIndex">
-      <van-tabbar-item icon="wap-home-o">首页</van-tabbar-item>
-      <van-tabbar-item icon="apps-o">资源</van-tabbar-item>
-      <van-tabbar-item icon="chart-trending-o">网格</van-tabbar-item>
-      <van-tabbar-item icon="user-circle-o">我的</van-tabbar-item>
+      <van-tabbar-item icon="wap-home-o" to="/home/main">首页</van-tabbar-item>
+      <van-tabbar-item icon="apps-o" to="/home/resource">资源</van-tabbar-item>
+      <van-tabbar-item icon="chart-trending-o" to="/home/grid">网格</van-tabbar-item>
+      <van-tabbar-item icon="user-circle-o" to="/home/my">我的</van-tabbar-item>
     </van-tabbar>
 </template>
 
@@ -13,10 +13,18 @@ import { State, Mutation } from "vuex-class";
 @Component
 export default class FooterComponent extends Vue {
   @State("footerModule") footerModule: any;
-  private icon: any = {
-    active: "https://img.yzcdn.cn/vant/user-active.png",
-    inactive: "https://img.yzcdn.cn/vant/user-inactive.png"
-  };
+
+  onChange(index:any){
+    if (index == 0) {
+      this.$router.push('/home/main')
+    }else if (index == 1) {
+      this.$router.push('/home/resource')
+    }else if (index == 2) {
+      this.$router.push('/home/grid')
+    }else if (index == 3) {
+      this.$router.push('/home/my')
+    }
+  }
 }
 </script>
 

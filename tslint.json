@@ -1,5 +1,5 @@
 {
-  "defaultSeverity": "warning",
+  "defaultSeverity": "none",
   "extends": [
     "tslint:recommended"
   ],
@@ -26,17 +26,6 @@
       "check-space"
     ],
     "no-console": false,
-　　"trailing-comma": [
-      true, 
-      {
-　　　　"singleline": "never",
-　　　　"multiline": {
-　　　　　　"objects": "ignore",
-　　　　　　"arrays": "always",
-　　　　　　"functions": "never",
-　　　　　　"typeLiterals": "ignore"
-　　　　}
-　　}],
     "no-debugger":false,
     "no-trailing-whitespace":false,
     "no-unused-expression":false,
