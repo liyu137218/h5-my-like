@@ -38,7 +38,7 @@ export default class HomeComponent extends Vue {
     .home-body{
         height: calc( 100% - 90px);
         width: 100%;
-        overflow: hidden;
+        overflow: auto;
     }
     /deep/.van-nav-bar{
         height: 40px;

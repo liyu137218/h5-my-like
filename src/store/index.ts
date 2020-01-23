@@ -7,8 +7,12 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    globalLoading:false
   },
   mutations: {
+    set_globalLoading(state:any,payload:any){
+      state.globalLoading = payload
+    }
   },
   actions: {
   },

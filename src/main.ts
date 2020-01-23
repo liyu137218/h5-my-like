@@ -2,10 +2,13 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
-import Vant from 'vant';
+import Vant,{Lazyload} from 'vant';
 import 'vant/lib/index.css';
 import './common/base.css';
 Vue.use(Vant);
+Vue.use(Lazyload, {
+  lazyComponent: true
+});
 Vue.config.productionTip = false;
 
 import Vconsole from 'vconsole';

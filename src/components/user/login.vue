@@ -27,8 +27,10 @@
 
 <script lang="ts">
 import {Vue, Component} from 'vue-property-decorator';
+import {Mutation } from 'vuex-class';
 @Component
 export default class loginComponent extends Vue {
+    @Mutation('set_globalLoading') set_globalLoading:any
     private pwdType:string = 'password'
     private userNum:string = ''
     private userPwd:string = ''
@@ -48,7 +50,11 @@ export default class loginComponent extends Vue {
     }
     login(){
         if (this.userNum && this.userPwd) {
-            this.$router.push('/home/main')
+            this.set_globalLoading(true)
+            setTimeout(() => {
+            this.set_globalLoading(false)
+                this.$router.push('/home/main')
+            }, 1500);
         }
     }
 }
