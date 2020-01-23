@@ -12,7 +12,11 @@
                 </van-swipe-item>
             </van-swipe>
         </div>
-        <van-image-preview v-model="show" :images="images" @change="onChange">
+        <van-image-preview 
+            v-model="show" 
+            :images="images" 
+            @change="onChange"
+            :startPosition="startPosition">
         <template v-slot:index>第{{ index }}页</template>
         </van-image-preview>
     </div>
@@ -30,9 +34,11 @@ export default class HomeMainTopComponent extends Vue {
     ]
     private show:boolean = false
     private index:number = 0
+    private startPosition:number = 0
 
     showPreview(index:any){
         this.index = index + 1
+        this.startPosition = index
         this.show = true
     }
     onChange(index:any) {
