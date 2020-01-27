@@ -12,7 +12,7 @@ import { State,Mutation } from 'vuex-class';
 export default class MyComponent extends Vue {
     @Mutation('set_headerText') set_headerText:any;
 
-    created() {
+    activated() {
         this.set_headerText('我的')
     }
 }

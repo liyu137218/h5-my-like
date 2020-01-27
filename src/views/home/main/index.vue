@@ -22,7 +22,7 @@ import HomeMainBottomComponent from '@/components/home/main/main-bottom.vue';
 export default class MainComponent extends Vue {
     @Mutation('set_headerText') set_headerText:any;
 
-    created() {
+    activated() {
         this.set_headerText('首页')
     }
 }

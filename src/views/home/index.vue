@@ -4,7 +4,11 @@
             <van-icon name="arrow-left" slot="left" />
         </van-nav-bar>
         <div class="home-body">
-            <router-view></router-view>
+            <transition name="slide-right">
+                <keep-alive>
+                    <router-view class="child-view"></router-view>
+                </keep-alive>
+            </transition>
         </div>
         <FooterComponent></FooterComponent>
     </div>
@@ -38,7 +42,8 @@ export default class HomeComponent extends Vue {
     .home-body{
         height: calc( 100% - 90px);
         width: 100%;
-        overflow: auto;
+        overflow-y: auto;
+        overflow-x: hidden;
     }
     /deep/.van-nav-bar{
         height: 40px;
@@ -53,6 +58,19 @@ export default class HomeComponent extends Vue {
     /deep/.van-nav-bar__title{
         color: #fff;
     }
+}
+.child-view {
+  transition: all .3s ;
+}
+.slide-right-leave-active {
+    opacity: 0;
+    -webkit-transform: translate(100%, 0);
+    transform: translate(100%, 0);
+}
+.slide-right-enter {
+    opacity: 0;
+    -webkit-transform: translate(-100%, 0);
+    transform: translate(-100%, 0);
 }
 </style>
 
