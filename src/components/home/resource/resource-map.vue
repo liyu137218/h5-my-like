@@ -6,20 +6,20 @@
 
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
-import {Map,View} from 'ol'
-import OSM from 'ol/source/OSM'
-import VectorSource from 'ol/source/Vector'
-import VectorLayer from 'ol/layer/Vector'
-import Tilelayer from 'ol/layer/Tile'
-import GeoJSON from 'ol/format/GeoJSON'
-import Style from 'ol/style/Style'
-import Fill from 'ol/style/Fill'
-import Stroke from 'ol/style/Stroke'
-import 'ol/ol.css'
+// import {Map,View} from 'ol'
+// import OSM from 'ol/source/OSM'
+// import VectorSource from 'ol/source/Vector'
+// import VectorLayer from 'ol/layer/Vector'
+// import Tilelayer from 'ol/layer/Tile'
+// import GeoJSON from 'ol/format/GeoJSON'
+// import Style from 'ol/style/Style'
+// import Fill from 'ol/style/Fill'
+// import Stroke from 'ol/style/Stroke'
+// import 'ol/ol.css'
 // const {Map, View, interaction} = require('ol')
 // const {OSM,Vector} = require('ol/source')
 // const {Tile,Vector} = require('ol/layer')
-
+import ol from 'openlayers'
 @Component
 export default class ResourceMap extends Vue {
     private map:any = null
@@ -35,12 +35,12 @@ export default class ResourceMap extends Vue {
 
             projection:'EPSG:4326'
         }
-        this.map = new Map({
+        this.map = new ol.Map({
             target:'resourceMap',
-            view:new View(viewOption),
+            view:new ol.View(viewOption),
             layers:[
-                new Tilelayer({
-                    source:new OSM()
+                new ol.layer.Tile({
+                    source:new ol.source.OSM()
                 }),
             ]
         })
@@ -60,24 +60,20 @@ export default class ResourceMap extends Vue {
         }
     }
     addGDVectorLayer(){
-        let VectorSourceOptions:any = {
-                url:'https://geo.datav.aliyun.com/areas/bound/440000_full.json',
-                format: new GeoJSON()
-            }
-        let vectorLayer:any = new VectorLayer({
-                    source:new VectorSource({
-                        url:'https://geo.datav.aliyun.com/areas/bound/440000_full.json',
-                        format: new GeoJSON()
+        let vectorLayer:any = new ol.layer.Vector({
+                source:new ol.source.Vector({
+                    url:'https://geo.datav.aliyun.com/areas/bound/440000_full.json',
+                    format: new ol.format.GeoJSON()
+                }),
+                style:new ol.style.Style({
+                    fill:new ol.style.Fill({
+                        color:'rgba(255,159,16,0.5)'
                     }),
-                    style:new Style({
-                        fill:new Fill({
-                            color:'rgba(255,159,16,0.5)'
-                        }),
-                        stroke:new Stroke({
-                            color:'#4981ec'
-                        })
+                    stroke:new ol.style.Stroke({
+                        color:'#4981ec'
                     })
                 })
+            })
         this.map.addLayer(vectorLayer)
     }
 }

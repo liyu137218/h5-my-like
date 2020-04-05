@@ -10,10 +10,11 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "@types/openlayers": "^4.6.17",
     "axios": "^0.19.1",
     "core-js": "^3.4.4",
     "echarts": "^4.6.0",
-    "ol": "^6.3.0",
+    "openlayers": "^4.6.5",
     "vant": "^2.4.3",
     "vconsole": "^3.3.4",
     "vue": "^2.6.10",
