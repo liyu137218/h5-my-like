@@ -25,18 +25,20 @@ export default function setOption(data:any){
                     },
                     areaStyle:{
                         opacity:0
-                    }
+                    },
                 },
+                fillerColor:'#4981ec',
                 start:0,
                 end:40,
                 showDetail:false,
                 borderColor :'#fff',
-                handleSize:'30%',
+                // handleSize:'20%',
                 handleStyle:{
-                    color:'rgba(46,128,246,1)',
+                    // color:'rgba(46,128,246,1)',
                     opacity:0
                 },
-                bottom:-15
+                bottom:-15,
+                radius:[10,10,10,10]
             }
         ],
         xAxis: {

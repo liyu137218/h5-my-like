@@ -60,7 +60,7 @@ export default class HomeComponent extends Vue {
     }
 }
 .child-view {
-  transition: all .3s ;
+  transition: all 0s ;
 }
 .slide-right-leave-active {
     opacity: 0;

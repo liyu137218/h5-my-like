@@ -13,7 +13,7 @@ import setOption from './echarts-option'
 export default class GridChartComponent extends Vue {
     private chart:any = null
 
-    created() {
+    mounted() {
         this.initChart()
     }
     activated() {
