@@ -6,9 +6,10 @@ module.exports = {
         port:"8080",
         disableHostCheck:true,
         proxy:{
-            'areas/bound':{
+            '/areas/bound':{
                 target:'https://geo.datav.aliyun.com/',
-                changeOrigin:true
+                changeOrigin:true,
+                ws: true
             }
 
         }
