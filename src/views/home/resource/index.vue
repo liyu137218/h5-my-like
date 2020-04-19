@@ -1,6 +1,9 @@
 <template>
-    <div>
-        <resourceMap></resourceMap>
+    <div class="main">
+        <van-nav-bar :title="headerModule.headerText"/>
+        <div class="main-body">
+            <resourceMap></resourceMap> 
+        </div>
     </div>
 </template>
 
@@ -15,6 +18,7 @@ import resourceMap from '@/components/home/resource/resource-map.vue'
  }
 })
 export default class ResourceComponent extends Vue {
+    @State('headerModule') headerModule:any
     @Mutation('set_headerText') set_headerText:any;
 
     activated() {
@@ -22,3 +26,13 @@ export default class ResourceComponent extends Vue {
     }
 }
 </script>
+
+<style lang="less" scoped>
+.main{
+    height: 100%;
+    .main-body{
+        height: calc(~"100% - 90px");
+        overflow: auto;
+    }
+}
+</style>

@@ -10,7 +10,8 @@
             </span>
         </p>
         <div class="alert-body" v-if="showAlert">
-            <div>
+            <div class="background"  @click="showAlert=false"></div>
+            <div class="time-select">
                 <van-datetime-picker
                     v-model="currentDate"
                     type="year-month"
@@ -101,8 +102,18 @@ export default class GridTopComponent extends Vue {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.3);
     z-index: 999;
+    .time-select{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+    .background{
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
 }
 </style>
 

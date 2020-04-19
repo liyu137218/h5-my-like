@@ -54,7 +54,10 @@ export default class RegionSelect extends Vue{
             text-align: center;
             font-size: 16px;
             line-height: 30px;
-            color: #4981ec;
+            color: #999;
+        }
+        &>:nth-child(2){
+            color: #333;
         }
     }
     div{

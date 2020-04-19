@@ -1,8 +1,11 @@
 <template>
-    <div>
-        <HomeMainTopComponent></HomeMainTopComponent>
-        <HomeMainMiddleComponent></HomeMainMiddleComponent>
-        <HomeMainBottomComponent></HomeMainBottomComponent>
+    <div class="main">
+        <van-nav-bar :title="headerModule.headerText"/>
+        <div class="main-body">
+            <HomeMainTopComponent></HomeMainTopComponent>
+            <HomeMainMiddleComponent></HomeMainMiddleComponent>
+            <HomeMainBottomComponent></HomeMainBottomComponent>
+        </div>
     </div>
 </template>
 
@@ -20,6 +23,7 @@ import HomeMainBottomComponent from '@/components/home/main/main-bottom.vue';
     }
 })
 export default class MainComponent extends Vue {
+    @State('headerModule') headerModule:any
     @Mutation('set_headerText') set_headerText:any;
 
     activated() {
@@ -27,3 +31,14 @@ export default class MainComponent extends Vue {
     }
 }
 </script>
+
+<style lang="less" scoped>
+.main{
+    height: 100%;
+    
+}
+.main-body{
+    height: calc(~"100% - 90px");
+    overflow: auto;
+}
+</style>

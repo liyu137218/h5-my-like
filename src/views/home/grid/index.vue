@@ -1,9 +1,12 @@
 <template>
     <div class="grid-container">
-        <gridTop></gridTop>
-        <gridRange></gridRange>
-        <gridChart></gridChart>
-        <gridList></gridList>
+        <van-nav-bar :title="headerModule.headerText"/>
+        <div class="grid-body">
+            <gridTop></gridTop>
+            <gridRange></gridRange>
+            <gridChart></gridChart>
+            <gridList></gridList>
+        </div>
     </div>
 </template>
 
@@ -23,6 +26,7 @@ import gridList from "@/components/home/grid/grid-list.vue"
     }
 })
 export default class GridComponent extends Vue {
+    @State('headerModule') headerModule:any
     @Mutation('set_headerText') set_headerText:any;
 
     activated() {
@@ -34,5 +38,9 @@ export default class GridComponent extends Vue {
 <style lang="less">
 .grid-container{
     background-color: #f7f7f7;
+}
+.grid-body{
+    height: calc(~"100% - 90px");
+    overflow: auto;
 }
 </style>

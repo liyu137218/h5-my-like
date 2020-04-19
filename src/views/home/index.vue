@@ -1,8 +1,5 @@
 <template>
     <div class="home-container">
-        <van-nav-bar :title="headerModule.headerText" >
-            <van-icon name="arrow-left" slot="left" />
-        </van-nav-bar>
         <div class="home-body">
             <transition name="slide-right">
                 <keep-alive>
@@ -40,7 +37,7 @@ export default class HomeComponent extends Vue {
     height: 100%;
     overflow: hidden;
     .home-body{
-        height: calc( 100% - 90px);
+        height: 100%;
         width: 100%;
         overflow-y: auto;
         overflow-x: hidden;

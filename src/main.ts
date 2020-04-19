@@ -2,7 +2,7 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
-import {Lazyload,Swipe,ImagePreview,Icon,Field,Button,NavBar,Popup,Tabbar,TabbarItem,SwipeItem,Circle,Loading} from 'vant';
+import {Lazyload,Swipe,ImagePreview,Icon,Field,Button,NavBar,Popup,Tabbar,TabbarItem,SwipeItem,Circle,Loading,DatetimePicker} from 'vant';
 import 'vant/lib/index.css';
 import './common/base.css';
 Vue.use(Swipe);
@@ -17,6 +17,7 @@ Vue.use(TabbarItem);
 Vue.use(SwipeItem);
 Vue.use(Circle);
 Vue.use(Loading);
+Vue.use(DatetimePicker);
 Vue.use(Lazyload, {
   lazyComponent: true
 });

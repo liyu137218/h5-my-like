@@ -1,8 +1,8 @@
 <template>
     <div class="login-container">
         <p @click="toRegister()">注册新用户</p>
-        <h1>资源综合系统</h1>
-        <h5>Integrated resource system</h5>
+        <h1>练手项目</h1>
+        <h5>Training project</h5>
         <section>
             <van-field 
                 v-model="userNum" 

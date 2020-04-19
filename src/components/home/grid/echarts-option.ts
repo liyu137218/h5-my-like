@@ -32,13 +32,17 @@ export default function setOption(data:any){
                 end:40,
                 showDetail:false,
                 borderColor :'#fff',
-                // handleSize:'20%',
+                handleSize:'80%',
+                handleIcon:`
+                    M 100, 100
+                    m -75,0
+                    a 75,75 0 1,0 150,0
+                    a 75,75 0 1,0 -150,0`,
                 handleStyle:{
-                    // color:'rgba(46,128,246,1)',
-                    opacity:0
+                    color:'rgba(46,128,246,1)',
                 },
-                bottom:-15,
-                radius:[10,10,10,10]
+                height:15,
+                bottom:0,
             }
         ],
         xAxis: {
