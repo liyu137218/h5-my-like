@@ -9,20 +9,29 @@
 import {Vue, Component} from 'vue-property-decorator'
 const Echarts = require('echarts')
 import setOption from './echarts-option'
+import homeApi from '@/api/homeApi'
 @Component
 export default class GridChartComponent extends Vue {
     private chart:any = null
 
     mounted() {
-        this.initChart()
+        this.getChartData()
     }
     activated() {
-        this.initChart()
+        this.getChartData()
     }
-    initChart(){
+    initChart(data:any){
         this.chart = Echarts.init(this.$refs.echart)
-        let option = setOption('123');
+        let option = setOption(data);
         this.chart.setOption(option)
+    }
+
+    getChartData(){
+        homeApi.getGridChartData('2020').then((res:any) =>{
+            if (res.data.code == 1) {
+                this.initChart(res.data.data)
+            }
+        })
     }
 }
 </script>

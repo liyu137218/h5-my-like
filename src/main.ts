@@ -23,8 +23,8 @@ Vue.use(Lazyload, {
 });
 Vue.config.productionTip = false;
 
+import "./mock/home-mock"
 import Vconsole from 'vconsole';
-
 if (window.location.href.indexOf('localhost') == -1) {
   let vConsole: any = new Vconsole();
   Vue.use(vConsole);

@@ -8,12 +8,12 @@ module.exports = {
         port:"8080",
         disableHostCheck:true,
         proxy:{
-            '^/areas/bound':{
-                target:'https://geo.datav.aliyun.com/',
+            '/areas/bound':{
+                target:'https://geo.datav.aliyun.com',
                 changeOrigin:true,
                 ws: true,
                 pathRewrite: {
-                    '^/areas/bound': '/areas/bound'
+                    '/areas/bound': '/areas/bound'
                   }
             }
 

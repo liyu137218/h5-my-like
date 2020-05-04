@@ -47,7 +47,7 @@ export default function setOption(data:any){
         ],
         xAxis: {
             type: 'category',
-            data: ['2019-1','2019-2','2019-3','2019-4','2019-5','2019-6','2019-7','2019-8','2019-9','2019-10','2019-11','2019-12'],
+            data: data.time,
             axisLine:{
                 show:false
             },
@@ -71,14 +71,14 @@ export default function setOption(data:any){
             type: 'line',
             name:'平均值',
             smooth:true,
-            data: [820, 932, 901, 934, 1290, 1330, 1320,1722,1833,1244,799,2999],
+            data: data.average,
             lineStyle:{
                 color:'#ff7f50'
             },
         },{
             type: 'bar',
             name:'总量',
-            data: [780, 892, 1901, 2934, 690, 830, 5120,1782,1633,1844,719,3999],
+            data: data.total,
             itemStyle:{
                 color:'#4981ec',
                 barBorderRadius:5,
