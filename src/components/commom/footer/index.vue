@@ -3,7 +3,7 @@
       <van-tabbar-item icon="wap-home-o" to="/home/main">首页</van-tabbar-item>
       <van-tabbar-item icon="apps-o" to="/home/resource">资源</van-tabbar-item>
       <van-tabbar-item icon="chart-trending-o" to="/home/grid">网格</van-tabbar-item>
-      <van-tabbar-item icon="user-circle-o" to="/home/my">我的</van-tabbar-item>
+      <van-tabbar-item icon="user-circle-o" to="/home/my?id=1">我的</van-tabbar-item>
     </van-tabbar>
 </template>
 
