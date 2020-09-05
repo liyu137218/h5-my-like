@@ -20,7 +20,6 @@ export default class MyComponent extends Vue {
     
     mounted(){
         window.onhashchange = () =>{
-            debugger 
             if (this.alertFlag) {
                  this.handleAlert(false)
             }
@@ -49,5 +48,6 @@ export default class MyComponent extends Vue {
     left: 0;
     top: 0;
     background-color: rgba(0,0,0,0.3);
+    z-index: 9;
 }
 </style>

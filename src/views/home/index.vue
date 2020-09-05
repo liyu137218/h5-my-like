@@ -42,19 +42,6 @@ export default class HomeComponent extends Vue {
         overflow-y: auto;
         overflow-x: hidden;
     }
-    /deep/.van-nav-bar{
-        height: 40px;
-        background-image:  linear-gradient(to right ,#4981ec, #10b7ff);
-        color:#fff;
-        line-height: 40px;
-    }
-    /deep/.van-nav-bar .van-icon {
-        color: #fff;
-        vertical-align: middle;
-    }
-    /deep/.van-nav-bar__title{
-        color: #fff;
-    }
 }
 .child-view {
   transition: all 0s ;

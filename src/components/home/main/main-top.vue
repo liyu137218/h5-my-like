@@ -16,8 +16,9 @@
             v-model="show" 
             :images="images" 
             @change="onChange"
-            :startPosition="startPosition">
-        <template v-slot:index>第{{ index }}页</template>
+            :startPosition="startPosition"
+        >
+            <template v-slot:index>第{{ index }}页</template>
         </van-image-preview>
     </div>
 </template>

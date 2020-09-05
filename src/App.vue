@@ -43,5 +43,18 @@ export default class App extends Vue {
     -webkit-transform: translate(-100%, 0);
     transform: translate(-100%, 0);
 }
+.nav-title{
+    height: 40px !important;
+    background-image:  linear-gradient(to right ,#4981ec, #10b7ff);
+    color:#fff !important;
+    line-height: 40px !important;
+    .van-nav-bar__arrow {
+      color: #fff !important;
+      vertical-align: middle;
+    }
+  .van-nav-bar__title{
+      color: #fff;
+  }
+}
 
 </style>
