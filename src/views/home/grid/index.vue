@@ -1,6 +1,9 @@
 <template>
     <div class="grid-container">
-        <van-nav-bar :title="headerModule.headerText"/>
+        <van-nav-bar 
+            :title="headerModule.headerText" 
+            class="nav-title"
+        />
         <div class="grid-body">
             <gridTop></gridTop>
             <gridRange></gridRange>

@@ -9,5 +9,5 @@ export function Compress(img:any,height:number,width:number,callback:Function) {
     canvas.height = height
     context.clearRect(0,0,width,height)
     context.drawImage(img,0,0,width,height)
-    callback(canvas.toDataURL("image/jpeg", 0.5))
+    callback(canvas.toDataURL("image/jpeg", 0.75))
 }

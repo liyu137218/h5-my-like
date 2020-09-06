@@ -1,6 +1,9 @@
 <template>
     <div class="main">
-        <van-nav-bar class="nav-title" :title="headerModule.headerText"/>
+        <van-nav-bar 
+            class="nav-title"
+            :title="headerModule.headerText"
+        />
         <div class="main-body">
             <HomeMainTopComponent></HomeMainTopComponent>
             <HomeMainMiddleComponent></HomeMainMiddleComponent>

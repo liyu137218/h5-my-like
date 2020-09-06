@@ -1,6 +1,9 @@
 <template>
     <div class="main">
-        <van-nav-bar :title="headerModule.headerText"/>
+        <van-nav-bar 
+            :title="headerModule.headerText" 
+            class="nav-title"
+        />
         <div class="main-body">
             <resourceMap></resourceMap> 
         </div>

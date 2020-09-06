@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <transition name="slide-right">
-      <router-view class="child-view"></router-view>
+      <keep-alive>
+        <router-view class="child-view"></router-view>
+      </keep-alive>
     </transition>
     <LoadingComponent v-if="globalModule.globalLoading"/>
   </div>
