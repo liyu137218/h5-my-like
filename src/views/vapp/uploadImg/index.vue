@@ -81,27 +81,25 @@ export default class uploadImg extends Vue {
 
     selectFile(event:any){
         this.showAlert = false
-        setTimeout(() => {            
-            if (event.target.files && event.target.files.length > 0) {
-                this.isLoading = true
-                let file:any = event.target.files[0]
-                let fr:any = new FileReader()
-                fr.readAsDataURL(file)
-                fr.onload = (imgObj:any) => {
-                    let img:any = new Image()
-                    img.src = imgObj.target.result
-                    img.onload = (e:any) => {
-                        Compress(img,e.path[0].height,e.path[0].width,(newImg:any) => {
-                            this.imgList.push(newImg)
-                            this.isLoading = false
-                            setTimeout(() => {
-                                this.addTouchEvent()   
-                            });
-                        })
-                    }
+        if (event.target.files && event.target.files.length > 0) {
+            this.isLoading = true
+            let file:any = event.target.files[0]
+            let fr:any = new FileReader()
+            fr.readAsDataURL(file)
+            fr.onload = (imgObj:any) => {
+                let img:any = new Image()
+                img.src = imgObj.target.result
+                img.onload = (e:any) => {
+                    Compress(img,e.path[0].height,e.path[0].width,(newImg:any) => {
+                        this.imgList.push(newImg)
+                        this.isLoading = false
+                        setTimeout(() => {
+                            this.addTouchEvent()   
+                        });
+                    })
                 }
             }
-        });
+        }
     }
     onChange(index:any) {
       this.imgPrevIndex = index+1;
