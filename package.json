@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@types/openlayers": "^4.6.17",
-    "axios": "^0.19.1",
+    "axios": "^0.21.1",
     "core-js": "^3.4.4",
     "mockjs": "^1.1.0",
     "openlayers": "^4.6.5",
